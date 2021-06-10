@@ -1,3 +1,5 @@
+import "../style/LeftMenu.css"
+
 function LeftMenu(props){
 
   const unreadEmails = props.emails.filter(email => !email.read)

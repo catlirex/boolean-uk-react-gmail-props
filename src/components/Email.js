@@ -1,3 +1,5 @@
+import "../style/Email.css"
+
 function Email(props){
     return (
         <li

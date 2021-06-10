@@ -1,4 +1,5 @@
 import Email from "./Email"
+import "../style/Emails.css"
 
 function Emails(props){
     return (
