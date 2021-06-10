@@ -5,6 +5,7 @@ function Email(props){
         <li
         key={props.index}
         className={`email ${props.email.read ? 'read' : 'unread'}`}
+        onClick={()=>props.setSelectedEmail(props.email)}
       >
         <div className="select">
           <input

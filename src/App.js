@@ -6,6 +6,7 @@ import './App.css'
 import Header from './components/Header.js'
 import LeftMenu from './components/LeftMenu'
 import Emails from './components/Emails'
+import EmailContent from './components/EmailContent'
 
 const getReadEmails = emails => emails.filter(email => !email.read)
 const getStarredEmails = emails => emails.filter(email => email.starred)
@@ -15,6 +16,7 @@ function App() {
   const [hideRead, setHideRead] = useState(false)
   const [currentTab, setCurrentTab] = useState('inbox')
   const [searchValue, setSearchValue] = useState("")
+  const [selectedEmail, setSelectedEmail] = useState(null)
 
   const toggleStar = targetEmail => {
     const updatedEmails = emails =>
@@ -57,9 +59,15 @@ function App() {
      setHideRead={setHideRead}/>
 
     <Emails 
+    setSelectedEmail={setSelectedEmail}
+    selectedEmail={selectedEmail}
     filteredEmails={filteredEmails}
     toggleRead={toggleRead}
     toggleStar={toggleStar}/>
+
+    <EmailContent 
+    selectedEmail={selectedEmail}
+    setSelectedEmail={setSelectedEmail}/>
       
     </div>
   )
