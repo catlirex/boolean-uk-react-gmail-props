@@ -9,7 +9,7 @@ function Emails(props){
           {props.filteredEmails.map((email, index) => (
             <Email 
             setSelectedEmail={props.setSelectedEmail}
-            index={index}
+            key={index}
             email={email}
             toggleRead={props.toggleRead}
             toggleStar={props.toggleStar}/>
